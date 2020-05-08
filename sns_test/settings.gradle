@@ -1,0 +1,2 @@
+rootProject.name='sns_test'
+include ':app', ':javax.mail-api-1.6.2', ':openCVLibrary'

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="sns_test/app" />
+      <module fileurl="file://$PROJECT_DIR$/javax.mail-api-1.6.2/javax.mail-api-1.6.2.iml" filepath="$PROJECT_DIR$/javax.mail-api-1.6.2/javax.mail-api-1.6.2.iml" group="sns_test/javax.mail-api-1.6.2" />
+      <module fileurl="file://$PROJECT_DIR$/openCVLibrary/openCVLibrary.iml" filepath="$PROJECT_DIR$/openCVLibrary/openCVLibrary.iml" group="sns_test/openCVLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/sns_test.iml" filepath="$PROJECT_DIR$/sns_test.iml" group="sns_test" />
+    </modules>
+  </component>
+</project>
