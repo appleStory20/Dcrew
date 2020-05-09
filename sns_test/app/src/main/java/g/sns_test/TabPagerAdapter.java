@@ -43,7 +43,6 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
                 AllthingsActivity allthingsactivity = new AllthingsActivity();
                 return allthingsactivity;
 
-
             default:
                 return null;
         }

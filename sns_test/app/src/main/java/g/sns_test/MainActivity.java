@@ -1,50 +1,29 @@
 package g.sns_test;
 
-import android.Manifest;
-import android.app.ActivityGroup;
-
-import android.graphics.drawable.AdaptiveIconDrawable;
-import android.os.Build;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-
-import gun0912.tedimagepicker.builder.TedImagePicker;
-import gun0912.tedimagepicker.builder.listener.OnMultiSelectedListener;
-import gun0912.tedimagepicker.builder.listener.OnSelectedListener;
-
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.ImageView;
-
-import android.widget.TabHost;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.gun0912.tedpermission.PermissionListener;
-import com.gun0912.tedpermission.TedPermission;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private ViewPager viewPager;
     private TabLayout tabLayout;
+
+    AllthingsActivity fragment1;
+    ListFragment fragment2;
+
   //  private final String INTENT_FILTER_ACTION = "com.example.sns.SNS_Notification";
  //   public static boolean uploadClicked = false;
 //뒤로가기 동작 버튼
@@ -67,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate 호출");
+
+         fragment1 = new AllthingsActivity(); //
+         fragment2 = new ListFragment(); //
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -217,6 +199,25 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+
+
+    //프래그먼트와 프래그먼트끼리 직접접근을하지않는다. 프래그먼트와 엑티비티가 접근함
+    public void onFragmentChange(int index){
+        if(index == 1 ){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();  //에러 발생
+            //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment2).commit();
+            //getSupportFragmentManager().beginTransaction().replace(R.id.viewPager ,fragment2).commit();
+        }
+//else if(index == 1)
+        /*
+        else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();
+        }
+*/
     }
 
 }
