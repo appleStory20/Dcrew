@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
     private TabLayout tabLayout;
     private DrawerLayout mDrawerLayout;
     private Context context = this;
-    private Button loginButton;
 
     AllthingsFragment allthingsfragment;
     ListFragment listfragment;
@@ -95,10 +93,15 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
             @Override
             public boolean onNavigationItemSelected(MenuItem menuitem) {
                 menuitem.setChecked(true);
+                mDrawerLayout.closeDrawers();
 
                 int id = menuitem.getItemId();
 
-                if(id==R.id.mypage){
+                if (id == R.id.Login){
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==R.id.mypage){
                     getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.drawer_layout, mypagefragment).commit();
@@ -110,12 +113,11 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
                     Toast.makeText(context, ": 팁", Toast.LENGTH_SHORT).show();
                 }
 
-                drawerLayout.closeDrawer(listView);
+                //drawerLayout.closeDrawer(listView);
                 return true;
             }
 
         });
-
 
         //탭
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -151,6 +153,17 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
 
             }
         });
+/*
+        // 로그인창으로 액티비티 전환
+        Button LoginButton = (Button) findViewById(R.id.loginButton);
+        LoginButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+*/
     }
 
     @Override
@@ -162,6 +175,8 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
         super.onBackPressed();
     }
 
+
+    //네비게이션 메뉴 클릭
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -225,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
 
    // FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-
+    // 게시판 프래그먼트 전환
     //프래그먼트와 프래그먼트끼리 직접접근을하지않는다. 프래그먼트와 엑티비티가 접근함
     public void onFragmentChange(int index){
         if(index == 1 ){
