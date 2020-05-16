@@ -20,28 +20,29 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch(position) {
             case 0:
-                MyCrewActivity mycrewactivity = new MyCrewActivity();
-                return mycrewactivity;
+                MyCrewFragment mycrewfragment= new MyCrewFragment();
+                return mycrewfragment;
 
             case 1:
-                HomeActivity homeactivity = new HomeActivity();
-            return homeactivity;
+                HomeFragment homefragment = new HomeFragment();
+                return homefragment;
 
             case 2:
-                UniversityActivity universityactivity = new UniversityActivity();
-                return universityactivity;
+                UniversityFragment universitfragment = new UniversityFragment();
+                return universitfragment;
 
             case 3:
-                CategoryActivity categoryactivity = new CategoryActivity();
-                return categoryactivity;
+                CategoryFragment categoryfragment = new CategoryFragment();
+                return categoryfragment;
 
             case 4:
-                UniteActivity uniteactivity = new UniteActivity();
-                return uniteactivity;
+                UniteFragment unitefragmnet = new UniteFragment();
+                return unitefragmnet;
 
             case 5:
-                AllthingsActivity allthingsactivity = new AllthingsActivity();
-                return allthingsactivity;
+                AllthingsFragment allthingsfragment = new AllthingsFragment();
+                return allthingsfragment;
+
 
             default:
                 return null;

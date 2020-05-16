@@ -9,12 +9,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class MyCrewActivity extends Fragment {
+public class MyPageFragment extends Fragment {
+    public static MyPageFragment newInstance(){
+        MyPageFragment mypagefragment = new MyPageFragment();
+        return mypagefragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater. inflate(R.layout.activity_mycrew, container, false);
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
-
-
 }

@@ -32,7 +32,6 @@
             android:layout_height="40dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/multiple_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/imageview_gridpicture"
             app:layout_constraintTop_toTopOf="@+id/imageview_gridpicture"
@@ -44,7 +43,6 @@
             android:layout_height="40dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/video"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/imageview_gridpicture"
             app:layout_constraintTop_toTopOf="@+id/imageview_gridpicture" />

@@ -1,45 +1,48 @@
 package g.sns_test;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.SearchView.OnQueryTextListener;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnQueryTextListener {
     private String TAG = "MainActivity";
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private DrawerLayout mDrawerLayout;
+    private Context context = this;
+    private Button loginButton;
 
-    AllthingsActivity allthingsfragment;
+    AllthingsFragment allthingsfragment;
     ListFragment listfragment;
-    //InsertPostActivity insertpost;
+    MyPageFragment mypagefragment;
 
-  //  private final String INTENT_FILTER_ACTION = "com.example.sns.SNS_Notification";
- //   public static boolean uploadClicked = false;
-//뒤로가기 동작 버튼
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()){
-//            case android.R.id.home:{
-//                finish();
-//                return true;
-//            }
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
-
+    DrawerLayout drawerLayout;
+    ListView listView;
+    ArrayAdapter<String> adapterDrawerList;
+    String[] menuItems = new String[] {"MyPageFragment"};
 
     // public static TabHost tabHost;
     @Override
@@ -48,26 +51,73 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate 호출");
 
-        allthingsfragment = new AllthingsActivity(); //
+        allthingsfragment = new AllthingsFragment(); //
         listfragment = new ListFragment(); //
        // insertpost = new InsertPostActivity();
 
+
+        //툴바 ->액션바
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //액션바
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true); //커스터마이징 하기 위해 필요
-        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle("Dcrew");
 
         //왼쪽 상단 메뉴
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
 
-//        View viewToolbar = getActivity().getLayoutInflater().inflate(R.layout.activitiy_searchlist,null);
-//
-//        actionBar.setCustomView(viewToolbar, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+        // 검색문 쿼리 수신하기
+        Intent intent = getIntent();
+        if(Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            doMySearch(query);
+        }
 
+        //왼쪽 상단 네비게이션 드로어
+        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+
+        //버튼이 클릭된 경우 openDrawer()메소드를 이용하고 매개변수로 GravityCompat.START를 넘긴다
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        mypagefragment = mypagefragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.drawer_layout,mypagefragment).commit();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuitem) {
+                menuitem.setChecked(true);
+
+                int id = menuitem.getItemId();
+
+                if(id==R.id.mypage){
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.drawer_layout, mypagefragment).commit();
+                } else if (id == R.id.dcrewmark) {
+
+                } else if(id == R.id.notion){
+                    Toast.makeText(context,  "공지", Toast.LENGTH_SHORT).show();
+                } else if(id == R.id.tip){
+                    Toast.makeText(context, ": 팁", Toast.LENGTH_SHORT).show();
+                }
+
+                drawerLayout.closeDrawer(listView);
+                return true;
+            }
+
+        });
+
+
+        //탭
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("mycrew"));
         tabLayout.addTab(tabLayout.newTab().setText("home"));
@@ -101,110 +151,79 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
 
-
-        //탭호스트에 들어갈 버튼에 아이콘 이미지가 담긴 뷰를 넣어주기 위해 선언하는 뷰 인스턴스
-        //내 동아리가기
-//        View mycrewView  = LayoutInflater.from(MainActivity.this).inflate(R.layout.mycrew, null);
-//        //대학교
-//        View universityView = LayoutInflater.from(MainActivity.this).inflate(R.layout.university, null);
-//        //카테고리
-//        View categoryView = LayoutInflater.from(MainActivity.this).inflate(R.layout.category, null);
-//        //동아리 연합
-//        View uniteView = LayoutInflater.from(MainActivity.this).inflate(R.layout.unite, null);
-//        //모두의 게시판
-//        View allthingsView = LayoutInflater.from(MainActivity.this).inflate(R.layout.allthings, null);
-//        //마이 페이지 뷰
-//        View mypageView = LayoutInflater.from(MainActivity.this).inflate(R.layout.mypage, null);
-
-        //    iv_notificationDot = findViewById(R.id.imageview_notification_dot);
-
-      //  Toolbar toolbar =findViewById(R.id.toolbar);
-     //   setSupportActionBar(toolbar);
-
-
-        //탭 호스트 레이아웃과 연결
-//        tabHost = findViewById(R.id.tabHost);
-//        //탭 호스트에 탭뷰를 추가해주기 전에 셋업 반드시!!
-//        tabHost.setup();
-//
-//        tabHost.addTab(tabHost.newTabSpec("crew")
-//                .setIndicator("mycrew")
-//                .setContent(new Intent(this, mycrewActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)));
-//
-//        tabHost.addTab(tabHost.newTabSpec("university")
-//                .setIndicator("대학교")
-//                .setContent(new Intent(this, universityActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)));
-//
-//        tabHost.addTab(tabHost.newTabSpec("category")
-//                .setIndicator("카테고리")
-//                .setContent(new Intent(this, categoryActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)));
-//
-//        tabHost.addTab(tabHost.newTabSpec("unite")
-//                .setIndicator("동아리연합")
-//                .setContent(new Intent(this, uniteActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)));
-//
-//        tabHost.addTab(tabHost.newTabSpec("allthings")
-//                .setIndicator("모두의 게시판")
-//                .setContent(new Intent(this, allthingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)));
-//
-//        tabHost.addTab(tabHost.newTabSpec("mypage")
-//                .setIndicator("me")
-//                .setContent(new Intent(this, mypageActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)));
-
+    @Override
+    public void onBackPressed() {
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        }
+        super.onBackPressed();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
+        super.onCreateOptionsMenu(menu);
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu,menu);
+        menuInflater.inflate(R.menu.menu, menu);
 
-        SearchView searchView = (SearchView)menu.findItem(R.id.action_search).getActionView();
-        searchView.setMaxWidth(Integer.MAX_VALUE);
-        searchView.setQueryHint("검색해주세요");
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2){
+            SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+            searchView.setMaxWidth(Integer.MAX_VALUE);
+            searchView.setQueryHint("검색해주세요");
 
-
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextChange(String s) {
-                Toast.makeText(getApplicationContext(),"입력중입니다.",Toast.LENGTH_SHORT).show();
-                return false;
+            // 쿼리를 구현할 리스너
+            searchView.setOnQueryTextListener(this);
+            SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+            if (null != searchManager) {
+                searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
             }
-
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                Toast.makeText(getApplicationContext(),"검색을 완료했습니다.",Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-//        MenuItem item_like = menu.add(0,0,0,"히든 메뉴");
-//        item_like.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
-//            public boolean onMenuItemClick(MenuItem item){
-//                Intent intent = new Intent(getApplicationContext(),SearchListActivity.class);
-//                intent.putExtra("Count",12);
-//                startActivity(intent);
-//                return true;
-//            }
-//        });
+            //추천 검색어의 쿼리 조정
+            searchView.setQueryRefinementEnabled(true);
+            //검색버튼 누르면 펼치기
+            searchView.setIconifiedByDefault(true);
+////처리 로직 구현 코드 나중에 붙이기 (데베 연결)
+    }
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d("test2","onOptionsItemSelected 호출");
 
-       int id = item.getItemId();
-       if(id == R.id.action_search){
-           return true;
+        switch (item.getItemId()) {
 
+            case R.id.action_search:
+                return true;
+
+            case R.id.home:
+            {
+                Toast.makeText(context,  "네비게이션 열림을 확인합니다.",Toast.LENGTH_SHORT).show();
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
 
-    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    @Override
+    public boolean onQueryTextChange(String s) {
+        // Toast.makeText(getApplicationContext(),"입력중입니다.",Toast.LENGTH_SHORT).show();
+        return false;
+    }
 
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        //  Toast.makeText(getApplicationContext(),"검색을 완료했습니다.",Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
+    private void doMySearch(String query) {
+    }
+
+
+   // FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
 
     //프래그먼트와 프래그먼트끼리 직접접근을하지않는다. 프래그먼트와 엑티비티가 접근함
@@ -219,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
         else if(index == 2){
             //getSupportFragmentManager().beginTransaction().replace(R.id.container, insertpost).commit();
         }
-
     }
 
 }
