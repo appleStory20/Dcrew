@@ -1,9 +1,11 @@
 package g.sns_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,8 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
+        Button insertButton = (Button) view.findViewById(R.id.insertButton);
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mTextViewEmpty = (TextView) view.findViewById(R.id.textViewEmpty);
         // mImageViewEmpty = (ImageView)view.findViewById(R.id.imageViewEmpty);
@@ -49,6 +53,14 @@ public class ListFragment extends Fragment {
 
         mListadapter = new ListAdapter(data);
         mRecyclerView.setAdapter(mListadapter);
+
+        insertButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getActivity(),InsertPostActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
@@ -95,11 +107,10 @@ public class ListFragment extends Fragment {
             });
         }
 
+
         @Override
         public int getItemCount() {
             return dataList.size();
-
-
 
         }
     }

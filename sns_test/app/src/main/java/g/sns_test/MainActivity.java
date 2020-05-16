@@ -21,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
-    AllthingsActivity fragment1;
-    ListFragment fragment2;
+    AllthingsActivity allthingsfragment;
+    ListFragment listfragment;
+    //InsertPostActivity insertpost;
 
   //  private final String INTENT_FILTER_ACTION = "com.example.sns.SNS_Notification";
  //   public static boolean uploadClicked = false;
@@ -47,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate 호출");
 
-         fragment1 = new AllthingsActivity(); //
-         fragment2 = new ListFragment(); //
+        allthingsfragment = new AllthingsActivity(); //
+        listfragment = new ListFragment(); //
+       // insertpost = new InsertPostActivity();
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -208,16 +210,16 @@ public class MainActivity extends AppCompatActivity {
     //프래그먼트와 프래그먼트끼리 직접접근을하지않는다. 프래그먼트와 엑티비티가 접근함
     public void onFragmentChange(int index){
         if(index == 1 ){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();  //에러 발생
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, listfragment).commit();
             //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment2).commit();
             //getSupportFragmentManager().beginTransaction().replace(R.id.viewPager ,fragment2).commit();
         }
-//else if(index == 1)
-        /*
-        else{
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();
+
+
+        else if(index == 2){
+            //getSupportFragmentManager().beginTransaction().replace(R.id.container, insertpost).commit();
         }
-*/
+
     }
 
 }

@@ -1,5 +1,6 @@
 package g.sns_test;
 
+//모두의 게시판 글 생성 클래스
 public class PostItem {
     String text;
     String comment;

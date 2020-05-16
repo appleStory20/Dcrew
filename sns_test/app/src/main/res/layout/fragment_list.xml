@@ -23,4 +23,15 @@
         android:text="@string/NO_INFORMATION"
         android:visibility="gone" />
 
+    <Button
+        android:id="@+id/insertButton"
+        android:text="게시글 생성"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp" />
+
+
 </RelativeLayout>
