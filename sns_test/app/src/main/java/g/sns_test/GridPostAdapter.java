@@ -19,11 +19,11 @@ public class GridPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     final int VIEW_PROGRESS = 1;
 
     //아이템을 담을 arraylist
-    ArrayList<PostItem> postItemArrayList;
+    ArrayList<GridPostItem> postItemArrayList;
 
     Context context;
     //생성자
-    public GridPostAdapter(ArrayList<PostItem> postItemArrayList, Context context) {
+    public GridPostAdapter(ArrayList<GridPostItem> postItemArrayList, Context context) {
         this.postItemArrayList = postItemArrayList;
         this.context = context;
     }
@@ -92,10 +92,7 @@ public class GridPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 ((GridViewHolder) holder).iv_multiple.setVisibility(View.GONE);//이미지 아이콘 gone
                 ((GridViewHolder) holder).iv_video.setVisibility(View.VISIBLE);//비디오 아이콘 visible
             }
-
-
         } else{
-
         }
 */
 
@@ -108,22 +105,18 @@ public class GridPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private class GridViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView iv_image, iv_multiple, iv_video;
+        ImageView iv_image;
 
         public GridViewHolder(@NonNull View itemView) {
             super(itemView);
 
             iv_image = itemView.findViewById(R.id.imageview_gridpicture);
-            iv_multiple = itemView.findViewById(R.id.imageview_multiple);
-            iv_video = itemView.findViewById(R.id.imageview_video);
             iv_image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mListener.onGridPictureClicked(getAdapterPosition());
                 }
             });
-
-
         }
     }
 

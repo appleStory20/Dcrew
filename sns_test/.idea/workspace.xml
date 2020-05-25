@@ -46,7 +46,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_1_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_0_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_0_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_0_0_aar.xml" afterDir="false" />
@@ -72,6 +72,9 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_core_2_10_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_dash_2_10_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_ui_2_10_5_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_1_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" afterDir="false" />
@@ -92,11 +95,13 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/AllthingsFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/CategoryFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/HomeFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/InsertPostActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/ListFragment.java" afterDir="false" />
@@ -107,7 +112,16 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/SearchableActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/UniteFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/UniversityFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/UniversityItemDecoration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/enter_from_bottom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/enter_from_right.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/exit_to_bottom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/exit_to_right.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/profile.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_insert_post.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_post.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allthings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_grid_post.xml" afterDir="false" />
@@ -117,6 +131,8 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_page.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unite.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_university.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/progress_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/more_menu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/navi_menu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/javax.mail-api-1.6.2/javax.mail-api-1.6.2.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/openCVLibrary/openCVLibrary.iml" afterDir="false" />
@@ -150,14 +166,14 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_allthings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activitiy_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_post_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_join.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_join.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mycrew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/navi_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mycrew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_post_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mypage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mypage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_unite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_recyclerview_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_university.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/progress_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_unite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/navi_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_university.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_recyclerview_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification_acitvity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification_acitvity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
@@ -197,9 +213,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -219,15 +235,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CNS213_1-master/CNS213_1-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../android_sns2.0-master/android_sns2.0-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="g.sns_test" />
+    </key>
     <key name="android.template.packageName">
       <recent name="g.sns_test" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="g.sns_test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\anim" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\menu" />
     </key>
   </component>
   <component name="RunDashboard">

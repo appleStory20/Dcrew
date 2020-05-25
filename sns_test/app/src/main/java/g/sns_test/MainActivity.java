@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
         listfragment = new ListFragment(); //
        // insertpost = new InsertPostActivity();
 
-
         //툴바 ->액션바
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,6 +90,12 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
                 .replace(R.id.drawer_layout,mypagefragment).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        View nav_header_view = navigationView.getHeaderView(0);  //네비게이션 헤더 값 변경을 위해
+        TextView textNic =(TextView) nav_header_view.findViewById(R.id.textNickname);
+        textNic.setText(LoginUser.getAccount());
+        //textNic.setText("nick");
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuitem) {

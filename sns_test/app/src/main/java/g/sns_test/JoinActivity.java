@@ -89,7 +89,6 @@ public class JoinActivity extends AppCompatActivity {
                     //양식 검사와 중복검사를 실시하는 메소드
                     checkAccount(account);
                 }
-
             }
         });
 
@@ -242,26 +241,26 @@ public class JoinActivity extends AppCompatActivity {
 
 
         //회원 가입 버튼 클릭 이벤트 리스너
-        btn_join.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //아이디 검사 메세지가"사용 가능한 아이디 입니다."이면 됨
-                //비밀번호 확인 검사 메세지가 "비밀번호 일치이면 됨"
-                //이름은 빈 값이 아니고, 양식에 맞아야 함(이름 확인 메세지가 출력되지 않으면 됨)
-                //닉네임 검사 메세지가 "사용 가능한 닉네임 입니다."이면 됨
-                //이메일 확인 메세지가 출력되지 않고 이메일이 빈 값이 아니면 됨
-                String account = editText_id.getText().toString();
-                String accountMessage = textView_id.getText().toString();
-                String password = editText_password.getText().toString();
-                String passwordMessage = textView_password.getText().toString();
-                String passwordCheck = editText_passwordCheck.getText().toString();
-                String passwordCheckMessage = textView_passwordCheck.getText().toString();
-                String name = editText_name.getText().toString();
-                String nameMessage = textView_name.getText().toString();
-                String nickname = editText_nickname.getText().toString();
-                String nicknameMessage = textView_nickname.getText().toString();
-                String email = editText_email.getText().toString();
-                String emailMessage = textView_email.getText().toString();
+                btn_join.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //아이디 검사 메세지가"사용 가능한 아이디 입니다."이면 됨
+                        //비밀번호 확인 검사 메세지가 "비밀번호 일치이면 됨"
+                        //이름은 빈 값이 아니고, 양식에 맞아야 함(이름 확인 메세지가 출력되지 않으면 됨)
+                        //닉네임 검사 메세지가 "사용 가능한 닉네임 입니다."이면 됨
+                        //이메일 확인 메세지가 출력되지 않고 이메일이 빈 값이 아니면 됨
+                        String account = editText_id.getText().toString();
+                        String accountMessage = textView_id.getText().toString();
+                        String password = editText_password.getText().toString();
+                        String passwordMessage = textView_password.getText().toString();
+                        String passwordCheck = editText_passwordCheck.getText().toString();
+                        String passwordCheckMessage = textView_passwordCheck.getText().toString();
+                        String name = editText_name.getText().toString();
+                        String nameMessage = textView_name.getText().toString();
+                        String nickname = editText_nickname.getText().toString();
+                        String nicknameMessage = textView_nickname.getText().toString();
+                        String email = editText_email.getText().toString();
+                        String emailMessage = textView_email.getText().toString();
 
 
                 //아이디 입력란이 공백인 경우

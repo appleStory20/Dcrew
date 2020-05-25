@@ -1,6 +1,7 @@
 package g.sns_test;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,10 +38,8 @@ public class LoginActivity extends AppCompatActivity implements HttpRequest.OnHt
         setContentView(R.layout.activity_login);
 
 
-        /*
         //자동로그인 관련 처리 메소드
         autoLogin();
-        */
 
         //아이디, 비밀번호 입력 칸
         et_account = findViewById(R.id.edittext_account);
@@ -105,11 +104,10 @@ public class LoginActivity extends AppCompatActivity implements HttpRequest.OnHt
                 } else if (loginResult.equals("checkAgain")) {//아이디나 비밀번호를 잘못 입력한 경우
                     Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show();
                 } else{ //아이디와 비밀번호를 모두 잘 입력한 경우
-/*
+
                     String account = responseBody.getString("account");
                     String nickname = responseBody.getString("nickname");
-                    String profile = responseBody.getString("profile");
-                    LoginUser.initInstance(account, nickname, profile);//사용자 정보 초기화
+                    LoginUser.initInstance(account, nickname);//사용자 정보 초기화
 
                     //사용자 정보 로컬에 저장
                     SharedPreferences sharedPreferences = getSharedPreferences("loginUser", MODE_PRIVATE);
@@ -117,10 +115,9 @@ public class LoginActivity extends AppCompatActivity implements HttpRequest.OnHt
 
                     editor.putString("account", account);
                     editor.putString("nickname", nickname);
-                    editor.putString("profile", profile);
 
                     editor.apply();
-*/
+
                     //메인 액티비티로 이동
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
@@ -134,9 +131,31 @@ public class LoginActivity extends AppCompatActivity implements HttpRequest.OnHt
         }
 
     }
+
+    // 자동 로그인 메소드
+    private void autoLogin(){
+        SharedPreferences sharedPreferences = getSharedPreferences("loginUser", MODE_PRIVATE);
+
+        //로그인 유저 정보가 존재하면 자동으로 메인 액티비티로 연결시켜준다.
+        String account = sharedPreferences.getString("account", null);
+        if (account != null) {
+            JSONObject requestBody = new JSONObject();//requestBody생성
+            try {
+                requestBody.put("account", account);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            //자동로그인을 위한 서버 통신
+            HttpRequest httpRequest = new HttpRequest("GET", requestBody.toString(), "autologin.php", this);
+            httpRequest.execute();
+        }
+        //쿠키가 null이면 로그아웃 상태
+        else {
+            Log.d("세션 쿠키", "null");
+        }
+    }
+
 }
-
-
 
 
 /*

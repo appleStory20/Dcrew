@@ -4,7 +4,6 @@ public class LoginUser {//로그인한 사용자 정보
 
     private static String account;
     private static String nickname;
-    private static String profile;
     //singleton instance
     private static LoginUser loginUser;
 
@@ -12,40 +11,34 @@ public class LoginUser {//로그인한 사용자 정보
 
     }
 
-    private LoginUser(String account, String nickname, String profile) {
+    private LoginUser(String account, String nickname) {
         this.account = account;
         this.nickname = nickname;
-        this.profile = profile;
     }
 
     public static LoginUser getInstance() {
         return loginUser;
     }
 
-    public static LoginUser initInstance(String account, String nickname, String profile){
-        loginUser = new LoginUser(account, nickname, profile);
+    public static LoginUser initInstance(String account, String nickname){
+        loginUser = new LoginUser(account, nickname);
         return loginUser;
     }
 
 
 
-    public String getAccount() {
+    public static String getAccount() {
         return account;
     }
 
-    public String getNickname() {
+    public static String getNickname() {
         return nickname;
     }
 
-    public String getProfile() {
-        return profile;
-    }
 
     public void setNickname(String nickname){
         this.nickname = nickname;
     }
 
-    public void setProfile(String profile){
-        this.profile = profile;
-    }
+
 }
