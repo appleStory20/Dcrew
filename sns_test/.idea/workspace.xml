@@ -99,14 +99,15 @@
       <change afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/AllthingsFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/CategoryFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/HomeFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/InsertPostActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/ListFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/MyCrewFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/MyPageFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/InsertPostEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/PostAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/PostData.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/PostDataInfomation.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/PostItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/SearchableActivity.java" afterDir="false" />
@@ -121,7 +122,7 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/delete.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/profile.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_insert_post.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_post.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_insert_post_edit.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allthings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_grid_post.xml" afterDir="false" />
@@ -129,8 +130,10 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_crew.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_list.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unite.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_university.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_list_item.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/progress_item.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/more_menu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/navi_menu.xml" afterDir="false" />
@@ -166,13 +169,13 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_allthings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activitiy_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_post_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_join.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_join.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mycrew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_post_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mycrew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/navi_header.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mypage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mypage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_unite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/navi_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_unite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_item_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_university.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_recyclerview_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification_acitvity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification_acitvity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" />
@@ -242,20 +245,26 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="g.sns_test" />
-    </key>
-    <key name="android.template.packageName">
-      <recent name="g.sns_test" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="g.sns_test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\anim" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\menu" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="g.sns_test" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="g.sns_test.Post" />
+      <recent name="g.sns_test" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="g.sns_test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\xml" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout\Post" />
     </key>
   </component>
   <component name="RunDashboard">

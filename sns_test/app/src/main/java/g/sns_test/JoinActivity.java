@@ -24,7 +24,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.regex.Pattern;
 
-
 public class JoinActivity extends AppCompatActivity {
     private EditText editText_id, editText_password, editText_passwordCheck, editText_name, editText_nickname,editText_email;
     //private EditText editText_id, editText_password, editText_passwordCheck, editText_name, editText_nickname;
@@ -346,10 +345,8 @@ public class JoinActivity extends AppCompatActivity {
 
                     //해당 액티비티 종료
                     finish();
-
-
                 }
-                }
+                    }
         });
 
 
@@ -480,8 +477,6 @@ public class JoinActivity extends AppCompatActivity {
             textView_email.setText("");
         }
     }
-
-
 
     //서버의 데이터와 비교하여 중복검사를 실시하는 스레드다.
     public class DoubleCheck extends AsyncTask<String, Void, String> {

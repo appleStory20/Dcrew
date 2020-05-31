@@ -98,8 +98,6 @@ public class InsertUser extends AsyncTask<String, Void, String>  {
             Log.d("insert user 에러", "InsertData: Error ", e);
             return null;
         }
-
-
     }
 
     @Override
@@ -116,6 +114,5 @@ public class InsertUser extends AsyncTask<String, Void, String>  {
             //Toast.makeText(getApplicationContext(), "문제가 생겼습니다. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
 

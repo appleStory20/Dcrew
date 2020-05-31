@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-
 public class ListFragment extends Fragment {
+
 
     private TextView mTextViewEmpty;
     // private ProgressBar mProgressBarLoading;
@@ -57,7 +57,8 @@ public class ListFragment extends Fragment {
         insertButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getActivity(),InsertPostActivity.class);
+                Intent intent = new Intent(getActivity(), g.sns_test.Post.InsertPostEdit.class);
+                //Intent intent = new Intent(getActivity(), InsertPostActivity.class);
                 startActivity(intent);
             }
         });
