@@ -1,19 +1,6 @@
 package g.sns_test.Post;
 
-import android.app.Activity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-
-import g.sns_test.R;
-
-
+/*
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.CustomViewHolder> {
 
     private ArrayList<PostData> mList = null;
@@ -27,12 +14,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.CustomViewHold
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
         protected TextView title;
-        protected TextView contents;
+        protected TextView nickname;
         protected TextView time;
 
 
         public CustomViewHolder(View view) {
             super(view);
+            this.title = (TextView) view.findViewById(R.id.post_title);
+            this.nickname = (TextView) view.findViewById(R.id.post_nickname);
+            this.time = (TextView) view.findViewById(R.id.post_date);
+
             //this.title = (TextView) view.findViewById(R.id.textView_post_title);
             //this.contents = (TextView) view.findViewById(R.id.textView_post_contents);
             //this.time = (TextView) view.findViewById(R.id.textView__post_time);
@@ -42,7 +33,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.CustomViewHold
 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.post_item_list, null);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.simple_article_list_item, null);
         CustomViewHolder viewHolder = new CustomViewHolder(view);
 
         return viewHolder;
@@ -51,9 +42,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.CustomViewHold
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewholder, int position) {
 
-        viewholder.title.setText(mList.get(position).gettitle());
-        viewholder.contents.setText(mList.get(position).getcontents());
-        viewholder.time.setText(mList.get(position).gettime());
+        viewholder.title.setText(mList.get(position).getTitle());
+        viewholder.nickname.setText(mList.get(position).getNickname() );
+        viewholder.time.setText(mList.get(position).getTime());
     }
 
     @Override
@@ -62,3 +53,5 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.CustomViewHold
     }
 
 }
+
+ */

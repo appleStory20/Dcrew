@@ -93,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements OnQueryTextListen
 
         View nav_header_view = navigationView.getHeaderView(0);  //네비게이션 헤더 값 변경을 위해
         TextView textNic =(TextView) nav_header_view.findViewById(R.id.textNickname);
-        textNic.setText(LoginUser.getAccount());
+        //textNic.setText(LoginUser.getAccount());
+        textNic.setText(LoginUser.getNickname());
         //textNic.setText("nick");
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

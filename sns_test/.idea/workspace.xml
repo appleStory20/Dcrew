@@ -5,10 +5,14 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2f1c5e77-a4a3-44ca-a596-08217bcccdcd" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_XPS15_mobile_ab_sns_test_app_libs_javax_mail_jar_unspecified_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_android_27.xml" afterDir="false" />
@@ -101,15 +105,43 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/CategoryFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/GridPostItem.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/HomeFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/InsertPostActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/ListFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/MyCrewFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/MyPageFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/EditorPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/EditorView.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/InsertPostEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/MainAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/MainView.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/PostAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/PostData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/PostEditActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/PostRetrofit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post/UploadResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/editor/PostEditActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/editor/PostEditPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/editor/PostEditView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/post/PostActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/post/PostAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/post/PostPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/activity/post/PostView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/api/ApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/api/ApiInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post2/model/Note.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/PostDataInfomation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/PostItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/InsertPostEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostEditActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostEditPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostEditView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/PostView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/Post_test/UploadResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/SearchableActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/UniteFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/g/sns_test/UniversityFragment.java" afterDir="false" />
@@ -121,8 +153,13 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/back.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/delete.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_insert_post.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_check.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_save.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_insert_post_edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_post.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_allthings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_grid_post.xml" afterDir="false" />
@@ -134,7 +171,10 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_unite.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_university.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_list_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/progress_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/simple_article_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/test_editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/test_note.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/test_post.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/more_menu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/navi_menu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/javax.mail-api-1.6.2/javax.mail-api-1.6.2.iml" afterDir="false" />
@@ -175,8 +215,8 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mycrew.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/navi_header.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mypage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mypage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_unite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_item_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_university.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_recyclerview_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_unite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_recyclerview_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_university.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/progress_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification_acitvity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_verification_acitvity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
@@ -200,7 +240,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5_API_25" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ce021712cbc454bd0c" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -217,6 +257,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
+        <option value="Interface" />
         <option value="Class" />
         <option value="layoutResourceFile" />
       </list>
@@ -237,8 +278,10 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ce021712cbc454bd0c" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-10T06:25:08.296Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../android_sns2.0-master/android_sns2.0-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -246,22 +289,31 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout" />
-      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\anim" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\drawable" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\java\g\sns_test\Post2\activity\editor" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\java\g\sns_test\Post2\activity\post" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\java\g\sns_test\Post_test" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\menu" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="g.sns_test" />
     </key>
     <key name="android.template.packageName">
+      <recent name="g.sns_test.Post2.activity" />
+      <recent name="g.sns_test.Post_test" />
       <recent name="g.sns_test.Post" />
       <recent name="g.sns_test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="g.sns_test" />
+      <recent name="g.sns_test.Post2" />
+      <recent name="g.sns_test.Post2.activity.post" />
+      <recent name="g.sns_test.Post2.model" />
+      <recent name="g.sns_test.Post2.api" />
+      <recent name="g.sns_test.Post_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\java\g\sns_test" />
+      <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\menu" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\xml" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout" />
       <recent name="C:\Users\XPS15\mobile\ab\sns_test\app\src\main\res\layout\Post" />

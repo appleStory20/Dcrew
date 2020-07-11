@@ -6,24 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import g.sns_test.Post_test.InsertPostEdit;
 
-public class ListFragment extends Fragment {
+public class ListFragment extends Fragment  {
 
 
-    private TextView mTextViewEmpty;
-    // private ProgressBar mProgressBarLoading;
-    // private ImageView mImageViewEmpty;
-    private RecyclerView mRecyclerView;
-
-    private ListAdapter mListadapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,33 +22,20 @@ public class ListFragment extends Fragment {
 
         Button insertButton = (Button) view.findViewById(R.id.insertButton);
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        mTextViewEmpty = (TextView) view.findViewById(R.id.textViewEmpty);
-        // mImageViewEmpty = (ImageView)view.findViewById(R.id.imageViewEmpty);
-        //mProgressBarLoading = (ProgressBar)view.findViewById(R.id.progressBarLoading);
+
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
+      // final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+      //  layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+      //  mRecyclerView.setLayoutManager(layoutManager);
 
-        ArrayList data = new ArrayList<PostItem>();
-        for (int i = 0; i < PostDataInfomation.id.length; i++) {
-            data.add(
-                    new PostItem
-                            (
-                                    PostDataInfomation.id[i],
-                                    PostDataInfomation.textArray[i],
-                                    PostDataInfomation.dateArray[i]
-                            ));
-        }
-
-        mListadapter = new ListAdapter(data);
-        mRecyclerView.setAdapter(mListadapter);
 
         insertButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getActivity(), g.sns_test.Post.InsertPostEdit.class);
+                Intent intent = new Intent(getActivity(), InsertPostEdit.class);
                 //Intent intent = new Intent(getActivity(), InsertPostActivity.class);
                 startActivity(intent);
             }
@@ -65,6 +43,15 @@ public class ListFragment extends Fragment {
 
         return view;
     }
+}
+
+
+
+
+
+/*
+
+
 
     public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         private ArrayList<PostItem> dataList;
@@ -115,4 +102,4 @@ public class ListFragment extends Fragment {
 
         }
     }
-}
+*/

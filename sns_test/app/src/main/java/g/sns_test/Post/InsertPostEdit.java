@@ -1,28 +1,6 @@
 package g.sns_test.Post;
 
-
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-
-import g.sns_test.R;
-
+/*
 public class InsertPostEdit extends AppCompatActivity {
 
     private static String IP_ADDRESS = "203.237.142.229";
@@ -59,8 +37,10 @@ public class InsertPostEdit extends AppCompatActivity {
                 String title =  mtitleEditText.getText().toString();
                 String contents =  mcontentsyEditText.getText().toString();
 
-                InsertPostEdit.InsertData task = new InsertPostEdit.InsertData();
-                task.execute("http://" + IP_ADDRESS + "/postInsert.php", title, contents);
+
+//                InsertPostEdit.InsertData task = new InsertPostEdit.InsertData();
+//                task.execute("http://" + IP_ADDRESS + "/postInsert.php", title, contents);
+                upload(title, contents);
 
 //                mtitleEditText.setText("");
 //                mcontentsyEditText.setText("");
@@ -68,7 +48,7 @@ public class InsertPostEdit extends AppCompatActivity {
             }
         });
     }
-
+/*
 
     class InsertData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
@@ -172,5 +152,80 @@ public class InsertPostEdit extends AppCompatActivity {
                 return new String("Error: " + e.getMessage());
             }
         }
+
+
+
+        //게시물 생성 버튼을 누를 때 서버로 데이터를 넘겨주는 메소드
+        private void upload(
+                String title,
+                String contents) {
+
+            //서버와 통신이 이루어질 동안 보일 로딩 창
+            ProgressDialog progressDialog = new ProgressDialog(InsertPostEdit.this);
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.show(InsertPostEdit.this, "게시물 생성", "잠시만 기다려주세요.", true, false);
+
+
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+
+            //레트로핏 세팅
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://203.237.142.229/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            //Log.d("아이디", LoginUser.getAccount());
+
+            String nick =  LoginUser.getNickname();
+            Log.d("닉네임: ", nick);
+
+            //서버로 보내줄 데이터 param 설정
+            RequestBody postNumPart = RequestBody.create(MultipartBody.FORM, String.valueOf(postNum));
+            RequestBody accountPart = RequestBody.create(MultipartBody.FORM, LoginUser.getAccount());
+            RequestBody NicknamePart = RequestBody.create(MultipartBody.FORM, nick);
+            RequestBody titlePart =  RequestBody.create(MultipartBody.FORM, title);
+            RequestBody contentsPart =  RequestBody.create(MultipartBody.FORM, contents);
+
+
+
+            //레트로핏 인터페이스 설정
+            RetrofitService retrofitService = retrofit.create(RetrofitService.class);
+
+            Call<UploadResponse> call = retrofitService.uploadResponse(postNumPart, accountPart, NicknamePart,  titlePart, contentsPart);
+
+            //Call<UploadResponse> call = retrofitService.uploadResponse(accountPart, titlePart, contentsPart);
+
+            call.enqueue(new Callback<UploadResponse>() {
+                @Override
+                public void onResponse(Call<UploadResponse> call, Response<UploadResponse> response) {
+
+                    Glide.get(getApplicationContext()).clearMemory();
+
+                    //작업이 완료되면 로딩 다이얼로그를 없애주고 메인화면으로 인텐트
+                    progressDialog.dismiss();
+
+                    Toast.makeText(getApplicationContext(), "생성 완료", Toast.LENGTH_SHORT).show();
+
+                    //메인 액티비티로 데이터를 함께 넘겨준다.
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+                @Override
+                public void onFailure(Call<UploadResponse> call, Throwable t) {
+                    progressDialog.dismiss();
+                    //Toast.makeText(getApplicationContext(), "생성 완료", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "업로드 실패", Toast.LENGTH_SHORT).show();
+                    Log.d("업로드 실패 에러: ", t.getMessage());
+
+                    //메인 액티비티로 데이터를 함께 넘겨준다.
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
     }
-}
+    */

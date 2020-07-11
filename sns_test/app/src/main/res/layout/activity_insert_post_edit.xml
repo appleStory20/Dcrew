@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Post.InsertPostEdit">
+    android:layout_height="match_parent">
+    <!--tools:context=".Post_test.InsertPostEdit"-->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -53,7 +54,7 @@
                 android:ems="10"
                 android:padding="10dp"
                 android:layout_marginBottom="10dp"
-                android:inputType="text"/>
+                android:inputType="textMultiLine"/>
 
         </LinearLayout>
     </ScrollView>

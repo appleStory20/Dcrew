@@ -3,7 +3,6 @@
     package="g.sns_test">
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,8 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Post.InsertPostEdit" />
-        <activity android:name=".InsertPostActivity" />
+        <activity android:name=".Post_test.InsertPostEdit" />
+        <activity android:name=".Post_test.PostActivity">
+        </activity>
+        <activity android:name=".Post_test.PostEditActivity" />
+        <activity android:name=".Post2.activity.post.PostActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".Post2.activity.editor.PostEditActivity" />
         <activity android:name=".VerificationAcitvity" />
         <activity android:name=".HttpRequest" />
         <activity android:name=".JoinActivity" />
@@ -30,13 +38,13 @@
                 android:resource="@xml/searchable" />
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.REORDER_TASKS" />
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

@@ -1,32 +1,73 @@
 package g.sns_test.Post;
 
+/*
 public class PostData {
+
+    //모두의 게시판 글 생성 클래스
+    @Expose
+    @SerializedName("id")
+    private int id;
+    @Expose
+    @SerializedName("title")
     private String title;
+    @Expose
+    @SerializedName("contents")
     private String contents;
-    private String time;
+    @Expose
+    @SerializedName("date")
+    private String date;
+    @Expose
+    @SerializedName("success") private Boolean success;
+    @Expose
+    @SerializedName("message") private String message;
 
-    public String gettitle() {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-    public String getcontents() {
-        return contents;
-    }
-
-    public String gettime() {
-        return title;
-    }
-
-    public void settitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setcontents(String contents) {
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String note) {
         this.contents = contents;
     }
 
-    public void settime(String time) {
-        this.time = time;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
 
+
+}
+
+ */
